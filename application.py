@@ -7,9 +7,11 @@ from selenium.webdriver.common.by import By
 import random
 import chromedriver_binary
 import time
+import re
+import numpy as np
 
 # creates the pokemon objects
-class pokemon: 
+class Pokemon: 
     
     def __init__(self, name, level, moveset):
         
@@ -41,8 +43,22 @@ class pokemon:
         self.moveset = moveset
             
 class Gym:
+
+    leader_name = ""
+    leader_type = ""
+    party = []
+    is_single_battle = True
+    items = []
+
+    def __init__(self):
+
+        self.leader_name = ""
+        self.leader_type = ""
+        self.party = []
+        self.is_single_battle = True
+        self.items = []
     
-    def __init__(self, leader_name, leader_type, party, is_single_battle, items):
+    def __init__(self, leader_name = "", leader_type = "", party = [], is_single_battle = True, items = []):
         
         # defines the gym leader's name
         self.leader_name = leader_name
@@ -115,9 +131,17 @@ element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, 
 # for i in range(1, 9):
 time.sleep(random.randint(2, 5))
 element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody')))
-print(element.text)
-print(type(element.text))
-gym_data = element.text.split(" ")
+
+gym_data = np.array(element.text.split('\n'), dtype=object)
+gym = Gym()
+for i in range(gym_data.size):
+    gym_data[i] = np.char.split(gym_data[i])
 print(gym_data)
+for i in range(gym_data.size):
+    for j in range(gym_data[i].size):
+        if (j == 0 and gym_data[i].size > 3):
+            if (gym_data[i][j] == 'Gym' and gym_data[i][j + 1] == 'Leader'):
+                Gym.set_leader_name(gym_data[i][j + 2])
+
 element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="rbar"]/div[6]/ul/li[9]/a'))).click()
 print(driver.title)
