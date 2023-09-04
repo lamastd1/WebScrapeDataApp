@@ -78,9 +78,31 @@ def collect_number_of_pokemon(xpath):
     element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, xpath)))
     fields = element.text.split(" ")
     return len(fields) - 3
-    
-    
 
+def collect_pokemon_name(xpath):
+    time.sleep(random.randint(2, 5))
+    element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, xpath)))
+    return element.text
+
+def collect_pokemon_level(xpath):
+    time.sleep(random.randint(2, 5))
+    element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, xpath)))
+    fields = element.text.split(" ")
+    return fields[1]
+
+def collect_pokemon_types(xpath):
+    time.sleep(random.randint(2, 5))
+    element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, xpath)))
+    link = element.get_attribute("href")
+    link = link[:-6]
+    link_parts = link.split("/")
+    return link_parts[len(link_parts) - 1]
+
+def collect_pokemon_moveset(xpath):
+    time.sleep(random.randint(2, 5))
+    element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, xpath)))
+    fields = element.text.split("\n")
+    return fields[1:]
 
 if __name__ == "__main__":
 
@@ -105,19 +127,53 @@ if __name__ == "__main__":
 
     text = collect_region('//*[@id="rbar"]/div[6]/ul/li[2]/a')
 
-    region_dict[text] = {
-    }
+    # region_dict['Region']
 
     gym_dict = {}
-    xpath = '//*[@id="content"]/main/table/tbody/tr[1]/td/font'
-    gym_dict['gym_number'] = collect_gym_name(xpath)
+    # xpath = '//*[@id="content"]/main/table/tbody/tr[1]/td/font'
+    gym_dict['Gym_Number'] = collect_gym_name('//*[@id="content"]/main/table/tbody/tr[1]/td/font')
 
     #print(region_dict)
 
-    text = collect_metadata('//*[@id="content"]/main/table/tbody/tr[2]/td[1]/p[1]')
+    gym_dict.update(collect_metadata('//*[@id="content"]/main/table/tbody/tr[2]/td[1]/p[1]'))
 
-    text = collect_number_of_pokemon('//*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[2]')
-    print(text)
+    number_of_pokemon = collect_number_of_pokemon('//*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[2]')
 
-    element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="rbar"]/div[6]/ul/li[9]/a'))).click()
-    #print(driver.title)
+    pokemon_dict = {}
+
+    # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[3]/td[2]
+    # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[3]/td[3]
+    # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[4]/td[1]
+    # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[4]/td[2]
+    # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[5]/td[1]
+    # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[5]/td[2]
+
+    # geodude 1st type
+    # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[4]/td[1]/a[1]
+    
+    gym_dict['Pokemon'] = []
+
+    for i in range(number_of_pokemon):
+        # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[2]/td[3]/a
+        pokemon_dict['Name'] = collect_pokemon_name('//*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[2]/td[' + str(i + 2) + ']/a')
+        pokemon_dict['Level'] = collect_pokemon_level('//*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[3]/td[' + str(i + 2) + ']')
+
+        # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[4]/td[1]/a[1]
+        # //*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[4]/td[1]/a[2]
+        # //*[@id="content"]/main/table/tbody/tr[4]/td[1]/table/tbody/tr[4]/td[1]/a
+        pokemon_dict['Types'] = []
+        
+        pokemon_dict['Types'].append(collect_pokemon_types('//*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[4]/td[' + str(i + 1) + ']/a'))
+
+        try: 
+            pokemon_dict['Types'].append(collect_pokemon_types('//*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[4]/td[' + str(i + 1) + ']/a[2]'))
+        except:
+            pass
+
+        pokemon_dict['Moveset'] = collect_pokemon_moveset('//*[@id="content"]/main/table/tbody/tr[2]/td[1]/table/tbody/tr[5]/td[' + str(i + 1) + ']')
+
+        gym_dict['Pokemon'].append(pokemon_dict)   
+
+    region_dict[gym_dict['Location']] = gym_dict
+    print(region_dict)
+    # element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="rbar"]/div[6]/ul/li[9]/a'))).click()
