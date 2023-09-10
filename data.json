@@ -1,0 +1,442 @@
+{
+  "Kanto": [
+    {
+      "Pokemon": [
+        {
+          "Name": "Geodude",
+          "Level": "12",
+          "Types": [
+            "rock",
+            "ground"
+          ],
+          "Moveset": [
+            "Tackle",
+            "Defense Curl"
+          ]
+        },
+        {
+          "Name": "Onix",
+          "Level": "14",
+          "Types": [
+            "rock",
+            "ground"
+          ],
+          "Moveset": [
+            "Tackle",
+            "Screech",
+            "Bide",
+            "Bind"
+          ]
+        }
+      ],
+      "Gym_Number": "#1",
+      "Location": "Pewter City",
+      "Gym Leader": "Brock",
+      "Specialty": "Rock-type",
+      "Badge": "Boulder Badge",
+      "TM": " TM34",
+      "HM": "HM05"
+    },
+    {
+      "Pokemon": [
+        {
+          "Name": "Staryu",
+          "Level": "18",
+          "Types": [
+            "water"
+          ],
+          "Moveset": [
+            "Tackle",
+            "Water Gun"
+          ]
+        },
+        {
+          "Name": "Starmie",
+          "Level": "21",
+          "Types": [
+            "water"
+          ],
+          "Moveset": [
+            "Tackle",
+            "Water Gun",
+            "Harden",
+            "Bubblebeam"
+          ]
+        }
+      ],
+      "Gym_Number": "#2",
+      "Location": "Cerulean City",
+      "Gym Leader": "Misty",
+      "Specialty": "Water-type",
+      "Badge": "Cascade Badge",
+      "TM": " TM31",
+      "HM": "HM01"
+    },
+    {
+      "Pokemon": [
+        {
+          "Name": "Voltorb",
+          "Level": "21",
+          "Types": [
+            "electric"
+          ],
+          "Moveset": [
+            "Tackle",
+            "Screech",
+            "Sonicboom"
+          ]
+        },
+        {
+          "Name": "Pikachu",
+          "Level": "18",
+          "Types": [
+            "electric"
+          ],
+          "Moveset": [
+            "Thundershock",
+            "Thunder Wave",
+            "Growl",
+            "Quick Attack"
+          ]
+        },
+        {
+          "Name": "Raichu",
+          "Level": "24",
+          "Types": [
+            "electric"
+          ],
+          "Moveset": [
+            "Thunderbolt",
+            "Thundershock",
+            "Thunder Wave",
+            "Growl"
+          ]
+        }
+      ],
+      "Gym_Number": "#3",
+      "Location": "Vermillion City",
+      "Gym Leader": "Lt. Surge",
+      "Specialty": "Electric-type",
+      "Badge": "Thunder Badge",
+      "TM": " TM24",
+      "HM": "HM02"
+    },
+    {
+      "Pokemon": [
+        {
+          "Name": "Victreebel",
+          "Level": "29",
+          "Types": [
+            "grass",
+            "poison"
+          ],
+          "Moveset": [
+            "Wrap",
+            "Poisonpowder",
+            "Sleep Powder",
+            "Razor Leaf"
+          ]
+        },
+        {
+          "Name": "Tangela",
+          "Level": "24",
+          "Types": [
+            "grass"
+          ],
+          "Moveset": [
+            "Bind",
+            "Constrict"
+          ]
+        },
+        {
+          "Name": "Vileplume",
+          "Level": "29",
+          "Types": [
+            "grass",
+            "poison"
+          ],
+          "Moveset": [
+            "Poisonpowder",
+            "Mega Drain",
+            "Sleep Powder",
+            "Petal Dance"
+          ]
+        }
+      ],
+      "Gym_Number": "#4",
+      "Location": "Celadon City",
+      "Gym Leader": "Erika",
+      "Specialty": "Grass-type",
+      "Badge": "Rainbow Badge",
+      "TM": " TM21",
+      "HM": "HM04"
+    },
+    {
+      "Pokemon": [
+        {
+          "Name": "Koffing",
+          "Level": "37",
+          "Types": [
+            "poison"
+          ],
+          "Moveset": [
+            "Tackle",
+            "Smog",
+            "Sludge",
+            "Smokescreen"
+          ]
+        },
+        {
+          "Name": "Muk",
+          "Level": "39",
+          "Types": [
+            "poison"
+          ],
+          "Moveset": [
+            "Disable",
+            "Poison Gas",
+            "Minimize",
+            "Sludge"
+          ]
+        },
+        {
+          "Name": "Koffing",
+          "Level": "37",
+          "Types": [
+            "poison"
+          ],
+          "Moveset": [
+            "Tackle",
+            "Smog",
+            "Sludge",
+            "Smokescreen"
+          ]
+        },
+        {
+          "Name": "Weezing",
+          "Level": "43",
+          "Types": [
+            "poison"
+          ],
+          "Moveset": [
+            "Smog",
+            "Sludge",
+            "Toxic",
+            "Selfdestruct"
+          ]
+        }
+      ],
+      "Gym_Number": "#5",
+      "Location": "Fuchsia City",
+      "Gym Leader": "Koga",
+      "Specialty": "Poison-type",
+      "Badge": "Soul Badge",
+      "TM": " TM06",
+      "HM": "HM03"
+    },
+    {
+      "Pokemon": [
+        {
+          "Name": "Kadabra",
+          "Level": "38",
+          "Types": [
+            "psychic"
+          ],
+          "Moveset": [
+            "Disable",
+            "Psybeam",
+            "Recover",
+            "Psychic"
+          ]
+        },
+        {
+          "Name": "Mr. Mime",
+          "Level": "37",
+          "Types": [
+            "psychic"
+          ],
+          "Moveset": [
+            "Confusion",
+            "Barrier",
+            "Light Screen",
+            "Doubleslap"
+          ]
+        },
+        {
+          "Name": "Venomoth",
+          "Level": "38",
+          "Types": [
+            "bug",
+            "poison"
+          ],
+          "Moveset": [
+            "Poisonpowder",
+            "Leech Life",
+            "Stun Spore",
+            "Psybeam"
+          ]
+        },
+        {
+          "Name": "Alakazam",
+          "Level": "43",
+          "Types": [
+            "psychic"
+          ],
+          "Moveset": [
+            "Psybeam",
+            "Recover",
+            "Psywave",
+            "Reflect"
+          ]
+        }
+      ],
+      "Gym_Number": "#6",
+      "Location": "Saffron City",
+      "Gym Leader": "Sabrina",
+      "Specialty": "Psychic-type",
+      "Badge": "Marsh Badge",
+      "TM": " TM46"
+    },
+    {
+      "Pokemon": [
+        {
+          "Name": "Growlithe",
+          "Level": "42",
+          "Types": [
+            "fire"
+          ],
+          "Moveset": [
+            "Ember",
+            "Leer",
+            "Take Down",
+            "Agility"
+          ]
+        },
+        {
+          "Name": "Ponyta",
+          "Level": "40",
+          "Types": [
+            "fire"
+          ],
+          "Moveset": [
+            "Tail Whip",
+            "Stomp",
+            "Growl",
+            "Fire Spin"
+          ]
+        },
+        {
+          "Name": "Rapidash",
+          "Level": "42",
+          "Types": [
+            "fire"
+          ],
+          "Moveset": [
+            "Tail Whip",
+            "Stomp",
+            "Growl",
+            "Fire Spin"
+          ]
+        },
+        {
+          "Name": "Arcanine",
+          "Level": "47",
+          "Types": [
+            "fire"
+          ],
+          "Moveset": [
+            "Roar",
+            "Ember",
+            "Take Down",
+            "Fire Blast"
+          ]
+        }
+      ],
+      "Gym_Number": "#7",
+      "Location": "Cinnabar Island",
+      "Gym Leader": "Blaine",
+      "Specialty": "Fire-type",
+      "Badge": "Volcano Badge",
+      "TM": " TM38"
+    },
+    {
+      "Pokemon": [
+        {
+          "Name": "Rhyhorn",
+          "Level": "45",
+          "Types": [
+            "ground",
+            "rock"
+          ],
+          "Moveset": [
+            "Stomp",
+            "Tail Whip",
+            "Fury Attack",
+            "Horn Attack"
+          ]
+        },
+        {
+          "Name": "Dugtrio",
+          "Level": "42",
+          "Types": [
+            "ground"
+          ],
+          "Moveset": [
+            "Growl",
+            "Dig",
+            "Sand Attack",
+            "Slash"
+          ]
+        },
+        {
+          "Name": "Nidoqueen",
+          "Level": "44",
+          "Types": [
+            "poison",
+            "ground"
+          ],
+          "Moveset": [
+            "Scratch",
+            "Tail Whip",
+            "Poison Sting",
+            "Body Slam"
+          ]
+        },
+        {
+          "Name": "Nidoking",
+          "Level": "45",
+          "Types": [
+            "poison",
+            "ground"
+          ],
+          "Moveset": [
+            "Tackle",
+            "Horn Attack",
+            "Poison Sting",
+            "Thrash"
+          ]
+        },
+        {
+          "Name": "Rhydon",
+          "Level": "50",
+          "Types": [
+            "ground",
+            "rock"
+          ],
+          "Moveset": [
+            "Stomp",
+            "Tail Whip",
+            "Fissure",
+            "Horn Drill"
+          ]
+        }
+      ],
+      "Gym_Number": "#8",
+      "Location": "Viridian City",
+      "Gym Leader": "Giovanni",
+      "Specialty": "Ground-type",
+      "Badge": "Earth Badge",
+      "TM": " TM27"
+    }
+  ]
+}
